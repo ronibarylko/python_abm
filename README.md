@@ -1,2 +1,1 @@
-# python_abm
-Agent-Based Modeling project
+# Agent-Based Modeling
