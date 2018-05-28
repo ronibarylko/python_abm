@@ -8,6 +8,7 @@ from cdiGame import CDIGame
 def main():
   print "Hello World!"
 
+# TODO: hacerlo con parametros (1, 2, 3, 4 corren distintas implementaciones)
 
 '''# PUNTO 3.8 ejercicio
 # GAME: RandomMover
@@ -41,7 +42,7 @@ payoffs = game.payoff()
 print "Player1 payoff: ", payoffs[player1]
 print "Player2 payoff: ", payoffs[player2]'''
 
-# PUNTO 4.16 ejercicio
+'''# PUNTO 4.16 ejercicio
 ## GAME: CDIGame with SimplePlayer
 # create a payoff matrix and two players (with playertypes)
 PAYOFFMAT = [ [(3,3),(0,5)] , [(5,0),(1,1)] ]
@@ -51,6 +52,23 @@ player1 = SimplePlayer(ptype1)
 player2 = SimplePlayer(ptype2)
 # create and run the game
 game = CDIGame(player1, player2, PAYOFFMAT)
+game.run()
+# retrieve and print the payoffs
+payoffs = game.payoff()
+print "Player1 payoff: ", payoffs[player1]
+print "Player2 payoff: ", payoffs[player2]'''
+
+# PUNTO 5.5 ejercicio
+## GAME: CDIGame with SoupPlayer
+# create a payoff matrix and two players (with playertypes)
+PAYOFFMAT = [ [(3,3),(0,5)] , [(5,0),(1,1)] ]
+ptype1 = CDIPlayerType()
+ptype2 = CDIPlayerType()
+player1 = SoupPlayer(ptype1)
+player2 = SoupPlayer(ptype2)
+# create and run the game
+players = [player1, player2]
+game = SoupRound(players = players, payoffmat = PAYOFFMAT)
 game.run()
 # retrieve and print the payoffs
 payoffs = game.payoff()
