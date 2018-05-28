@@ -1,3 +1,5 @@
+from simplePlayer import SimplePlayer
+
 class SoupPlayer(SimplePlayer):
     def evolve(self):
         self.playertype = self.next_playertype
@@ -10,4 +12,3 @@ class SoupPlayer(SimplePlayer):
         best_playertypes = topscore_playertypes(self)
         # choose randomly from these best playertypes
         self.next_playertype = random.choice(best_playertypes)
-        

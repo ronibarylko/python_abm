@@ -2,6 +2,8 @@ from randomMover import RandomMover
 from simpleGame import SimpleGame
 from randomPlayer import RandomPlayer
 from simplePlayer import SimplePlayer
+from soupPlayer import SoupPlayer
+from soupRound import SoupRound
 from cdiPlayerType import CDIPlayerType
 from cdiGame import CDIGame
 
@@ -71,6 +73,5 @@ players = [player1, player2]
 game = SoupRound(players = players, payoffmat = PAYOFFMAT)
 game.run()
 # retrieve and print the payoffs
-payoffs = game.payoff()
-print "Player1 payoff: ", payoffs[player1]
-print "Player2 payoff: ", payoffs[player2]
+print "Player1 payoff: ", player1.get_payoff()
+print "Player2 payoff: ", player2.get_payoff()
