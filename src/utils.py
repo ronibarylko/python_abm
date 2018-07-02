@@ -17,3 +17,16 @@ def random_pairs_of(players):
     # yield the shuffled players, 2 at a time
     player_iter = iter(players)
     return izip(player_iter, player_iter)
+
+def topscore_playertypes(player):
+    """Return list of best (maximum payoff) player types."""
+    best_types = [player.playertype]
+    best_payoff = player.get_payoff()
+    for opponent in player.players_played:
+        payoff = opponent.get_payoff()
+        if payoff > best_payoff:
+            best_payoff = payoff
+            best_types = [opponent.playertype]
+        elif payoff == best_payoff:
+            best_types.append(opponent.playertype)
+        return best_types
