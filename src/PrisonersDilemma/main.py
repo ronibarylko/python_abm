@@ -1,11 +1,11 @@
-from randomMover import RandomMover
-from simpleGame import SimpleGame
-from randomPlayer import RandomPlayer
-from simplePlayer import SimplePlayer
-from soupPlayer import SoupPlayer
-from soupRound import SoupRound
-from cdiPlayerType import CDIPlayerType
-from cdiGame import CDIGame
+from Mover.randomMover import RandomMover
+from Game.simpleGame import SimpleGame
+from Player.randomPlayer import RandomPlayer
+from Player.simplePlayer import SimplePlayer
+from Player.soupPlayer import SoupPlayer
+from Round.soupRound import SoupRound
+from PlayerType.cdiPlayerType import CDIPlayerType
+from Game.cdiGame import CDIGame
 
 def main():
   print "Hello World!"

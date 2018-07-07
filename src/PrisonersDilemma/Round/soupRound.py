@@ -1,5 +1,5 @@
 from utils import random_pairs_of
-from cdiGame import CDIGame
+from Game.cdiGame import CDIGame
 
 class SoupRound:
     def __init__(self, players, payoffmat):
