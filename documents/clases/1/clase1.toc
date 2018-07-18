@@ -1,0 +1,7 @@
+\beamer@endinputifotherversion {3.36pt}
+\beamer@sectionintoc {1}{Introducci\IeC {\'o}n a la vida del programador}{3}{0}{1}
+\beamer@sectionintoc {2}{Introducci\IeC {\'o}n a la vida del programa}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{Lists I}{4}{0}{2}
+\beamer@subsectionintoc {2}{2}{Lists II}{9}{0}{2}
+\beamer@sectionintoc {3}{Section no.3}{14}{0}{3}
+\beamer@subsectionintoc {3}{1}{Tables}{14}{0}{3}

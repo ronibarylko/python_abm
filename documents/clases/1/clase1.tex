@@ -1,0 +1,93 @@
+% This text is proprietary.
+% It's a part of presentation made by myself.
+% It may not used commercial.
+% The noncommercial use such as private and study is free
+% Sep. 2005 
+% Author: Sascha Frank 
+% University Freiburg 
+% www.informatik.uni-freiburg.de/~frank/
+
+\documentclass{beamer}
+\usepackage[utf8]{inputenc} % remplace utf8 con latin1
+                            % si va a compilar en un sistema
+                            % Windows
+\usepackage{hyperref}
+\usepackage[spanish]{babel}
+
+\begin{document}
+\title{Programar como forma de vida}   
+\author{Roni Barylko} 
+\date{\today} 
+
+\frame{\titlepage} 
+
+\frame{\frametitle{Contenidos del día de la fecha}\tableofcontents} 
+
+
+\section{Introducción a la vida del programador} 
+\frame{\frametitle{Title} 
+Each frame should have a title.
+}
+
+\section{Introducción a la vida del programa} 
+\subsection{Lists I}
+\frame{\frametitle{unnumbered lists}
+\begin{itemize}
+\item Introduction to  \LaTeX  
+\item Course 2 
+\item Termpapers and presentations with \LaTeX 
+\item Beamer class
+\end{itemize} 
+}
+
+\frame{\frametitle{lists with pause}
+\begin{itemize}
+\item Introduction to  \LaTeX \pause 
+\item Course 2 \pause 
+\item Termpapers and presentations with \LaTeX \pause 
+\item Beamer class
+\end{itemize} 
+}
+
+\subsection{Lists II}
+\frame{\frametitle{numbered lists}
+\begin{enumerate}
+\item Introduction to  \LaTeX  
+\item Course 2 
+\item Termpapers and presentations with \LaTeX 
+\item Beamer class
+\end{enumerate}
+}
+\frame{\frametitle{numbered lists with pause}
+\begin{enumerate}
+\item Introduction to  \LaTeX \pause 
+\item Course 2 \pause 
+\item Termpapers and presentations with \LaTeX \pause 
+\item Beamer class
+\end{enumerate}
+}
+
+\section{Section no.3} 
+\subsection{Tables}
+\frame{\frametitle{Tables}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Date} & \textbf{Instructor} & \textbf{Title} \\
+\hline
+WS 04/05 & Sascha Frank & First steps with  \LaTeX  \\
+\hline
+SS 05 & Sascha Frank & \LaTeX \ Course serial \\
+\hline
+\end{tabular}}
+
+
+\frame{\frametitle{Tables with pause}
+\begin{tabular}{c c c}
+A & B & C \\ 
+\pause 
+1 & 2 & 3 \\  
+\pause 
+A & B & C \\ 
+\end{tabular} }
+
+\end{document}
