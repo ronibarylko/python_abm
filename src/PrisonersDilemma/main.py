@@ -7,8 +7,42 @@ from Round.soupRound import SoupRound
 from PlayerType.cdiPlayerType import CDIPlayerType
 from Game.cdiGame import CDIGame
 
+from jugadorSimple import JugadorSimple
+from juegoSimple import JuegoSimple
+
 def main():
   print "Hello World!"
+
+'''-------Dilema del prisionero con una unica jugada-------'''
+#Primera iteracion: eleccion random
+matrizDeDecisiones =  [ [(3,3),(0,5)] , [(5,0),(1,1)] ] # Las 4 posibilidades del juego
+jugador1 = JugadorSimple()
+jugador2 = JugadorSimple()
+eleccion1 = jugador1.decidir()
+eleccion2 = jugador2.decidir()
+resultado1, resultado2 = matrizDeDecisiones[eleccion1][eleccion2]
+#print "Condena de jugador 1: ", resultado1
+#print "Condena de jugador 2: ", resultado2
+
+#Segunda iteracion: los jugadores pueden cooperar mas o menos
+jugador1 = JugadorSimple(p=0.9)
+jugador2 = JugadorSimple(p=0.1)
+eleccion1 = jugador1.decidir()
+eleccion2 = jugador2.decidir()
+resultado1, resultado2 = matrizDeDecisiones[eleccion1][eleccion2]
+print "Condena de jugador 1: ", resultado1
+print "Condena de jugador 2: ", resultado2
+
+#Tercera iteracion:
+jugador1 = JugadorSimple(p=0.9)
+jugador2 = JugadorSimple(p=0.1)
+# create and run the game
+juego = JuegoSimple(jugador1, jugador2, matrizDeDecisiones)
+juego.correr()
+# retrieve and print the payoffs
+condenas = juego.condena()
+print "Condena de jugador 1: ", condenas[jugador1]
+print "Condena de jugador 2: ", condenas[jugador2]
 
 # TODO: hacerlo con parametros (1, 2, 3, 4 corren distintas implementaciones)
 
@@ -58,7 +92,7 @@ game.run()
 # retrieve and print the payoffs
 payoffs = game.payoff()
 print "Player1 payoff: ", payoffs[player1]
-print "Player2 payoff: ", payoffs[player2]'''
+print "Player2 payoff: ", payoffs[player2]
 
 # PUNTO 5.5 ejercicio
 ## GAME: CDIGame with SoupPlayer
@@ -82,4 +116,4 @@ for i in range(value):
     game = SoupRound(players = [player1, player2], payoffmat = PAYOFFMAT)
     game.run()
 print "Player1 payoff: ", player1.last_value()
-print "Player2 payoff: ", player2.last_value()
+print "Player2 payoff: ", player2.last_value()'''
