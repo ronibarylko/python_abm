@@ -1,22 +1,31 @@
+import random
+
 class Dragon:
 
-    def __init__(self, edad):
+    def __init__(self, posicionActual, edad, nombre):
+        self.__estaDomado = False
         self.__edad = edad
-        self.__domado = False
+        self.__posicionActual = posicionActual
+        self.__nombre = nombre
 
-    def escupirFuego(self, capacidadDomador):
-        if self.__domado:
-            return self.__edad * capacidadDomador
-        else:
-            print("Los dragones no domados no saben escupir fuego")
-            return 0
+    def obtenerPosicionActual(self):
+        return self.__posicionActual
 
-    def domar(self):
-        self.__domado = True
+    def obtenerEdad(self):
+        return self.__edad
 
     def estaDomado(self):
-        return self.__domado
+        return self.__estaDomado
 
-    def volar(self):
-        #Movimiento random
-        return 0
+    def obtenerNombre(self):
+        return self.__nombre
+
+    def capacidadDeAtaque(self, capacidad):
+        return self.__edad * capacidad
+
+    def mover(self, posicionMaxima):
+        self.__posicionActual = (self.__posicionActual + 1 + random.randint(-3,3)) % posicionMaxima
+        print "Le dragon " + self.__nombre + " se ha movido a la posicion " + str(self.__posicionActual)
+
+    def cambiarEstado(self):
+        self.__estaDomado = True
