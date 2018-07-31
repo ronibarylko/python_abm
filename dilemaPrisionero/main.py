@@ -27,9 +27,9 @@ print("El jugador 1 recibio " + str(resultado[0]))
 print("El jugador 2 recibio " + str(resultado[1]))'''
 
 # Dilema del prisionero con historia
-jugador1 = Jugador(0.5)
-jugador2 = Jugador(0.3)
+jugador1 = Jugador(0.5, 2)
+jugador2 = Jugador(0.5, 2)
 
 juego = Juego(matrizDePagos, jugador1, jugador2)
-juego.correr(1000000)
+juego.correr(1000)
 print(juego.pagoEsperado())

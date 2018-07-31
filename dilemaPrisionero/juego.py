@@ -10,13 +10,23 @@ class Juego:
     def correr (self, numerojugadas = 1):
         historiaParcial = []
         for i in range(numerojugadas):
-            eleccion1 = self.__jugador1.estrategia()
-            eleccion2 = self.__jugador2.estrategia()
-            decisiones.append([eleccion1, eleccion2])
+            eleccion1 = self.__jugador1.estrategia(self.__matriz, self.decisionesDelOtroJugador(self.__jugador1))
+            eleccion2 = self.__jugador2.estrategia(self.__matriz, self.decisionesDelOtroJugador(self.__jugador2))
+            self.__decisiones.append([eleccion1, eleccion2])
             resultado = self.__matriz[eleccion1][eleccion2]
             historiaParcial.append(resultado)
         self.__historia.extend(historiaParcial)
         return historiaParcial
+
+    def decisionesDelOtroJugador(self, jugador):
+        decisionesJugador = []
+        if jugador == self.__jugador1:
+            for element in self.__decisiones:
+                decisionesJugador.append(element[1])
+        else:
+            for element in self.__decisiones:
+                decisionesJugador.append(element[0])
+        return decisionesJugador
 
     def historia(self):
         return self.__historia
