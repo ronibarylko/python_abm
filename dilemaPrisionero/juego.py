@@ -5,12 +5,14 @@ class Juego:
         self.__jugador1 = jugador1
         self.__jugador2 = jugador2
         self.__historia = []
+        self.__decisiones = []
 
     def correr (self, numerojugadas = 1):
         historiaParcial = []
         for i in range(numerojugadas):
             eleccion1 = self.__jugador1.estrategia()
             eleccion2 = self.__jugador2.estrategia()
+            decisiones.append([eleccion1, eleccion2])
             resultado = self.__matriz[eleccion1][eleccion2]
             historiaParcial.append(resultado)
         self.__historia.extend(historiaParcial)

@@ -1,5 +1,6 @@
 import random
 from jugador import Jugador
+from juego import Juego
 
 #Matriz de pagos
 fila1 = [[3,3], [0,10]]
@@ -11,17 +12,24 @@ matrizDePagos = [fila1, fila2]
 jugador2 = random.randint(0,1)
 
 resultado = matrizDePagos[jugador1][jugador2]
-print "El jugador 1 recibio " + str(resultado[0])
-print "El jugador 2 recibio " + str(resultado[1])'''
+print("El jugador 1 recibio " + str(resultado[0]))
+print("El jugador 2 recibio " + str(resultado[1]))'''
 
 # Dilema del prisionero con probabilidad
-
-jugador1 = Jugador(1)
+'''jugador1 = Jugador(1)
 jugador2 = Jugador(0)
 
 eleccion1 = jugador1.estrategia()
 eleccion2 = jugador2.estrategia()
 
 resultado = matrizDePagos[eleccion1][eleccion2]
-print "El jugador 1 recibio " + str(resultado[0])
-print "El jugador 2 recibio " + str(resultado[1])
+print("El jugador 1 recibio " + str(resultado[0]))
+print("El jugador 2 recibio " + str(resultado[1]))'''
+
+# Dilema del prisionero con historia
+jugador1 = Jugador(0.5)
+jugador2 = Jugador(0.3)
+
+juego = Juego(matrizDePagos, jugador1, jugador2)
+juego.correr(1000000)
+print(juego.pagoEsperado())
